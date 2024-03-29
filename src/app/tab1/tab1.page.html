@@ -7,20 +7,13 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Servo Status</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-toggle class="custom-toggle" [(ngModel)]="toggleStatus"></ion-toggle>
-  <ion-label>{{ toggleStatus ? 'On' : 'Off' }}</ion-label>
+<div class="main-content">
+  <ion-toggle (ionChange)="onToggleClick($event)" [(ngModel)]="toggleStatus" [enableOnOffLabels]="true"></ion-toggle>
+</div>
 </ion-content>
-
-<!-- <ion-grid style="height: 100%;" class="content">
-  <ion-row justify-content-center align-items-center style="height: 100%;">
-    <ion-col size="auto">
-      <ion-toggle class="custom-toggle" [(ngModel)]="toggleStatus"></ion-toggle>
-      <ion-label>{{ toggleStatus ? 'On' : 'Off' }}</ion-label>
-    </ion-col>
-  </ion-row>
-</ion-grid> -->
